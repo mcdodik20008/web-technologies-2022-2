@@ -1,3 +1,185 @@
-.head2:first-child{
-    color: aqua;
+.head {
+    padding-top: 50px;
+    padding-bottom: 80px;
 }
+
+.refs:first-child {
+    padding-right: 200px;
+    margin-left: 200px;
+}
+
+.refs:last-child {
+    padding-left: 200px;
+}
+
+.blue {
+    color: #1469c2;
+}
+
+.mobile {
+    padding-left: 100px;
+    margin-bottom: 200px;
+}
+
+.about-mobile {
+    margin-bottom: 30px;;
+}
+
+.develop-cycle {
+    height: 250px;
+    margin-bottom: 50px;
+}
+
+.info-develop-cycle {
+    float: left;
+    margin-left: 100px;
+    margin-right: 150px;
+}
+
+.td-refs-develop-cycle {
+    padding-top: 10px;
+}
+
+.developed {
+    height: 200px;
+}
+
+.text-developed {
+    margin-left: 100px;
+}
+
+.sections-developed {
+    margin-left: 100px;
+}
+
+.sec-col-section-developed {
+    padding-left: 150px;
+}
+
+.thi-col-section-developed {
+    padding-left: 150px;
+}
+
+.projects {
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+
+.refs-project {
+    margin-top: 30px;
+}
+
+.col-refs-project {
+    padding-right: 30px;
+}
+
+.margin-bottom {
+    margin-bottom: 30px;
+}
+
+.discuss {
+    height: 150px;
+}
+
+.description-discuss {
+    float: left;
+    margin-left: 100px;
+    padding-right: 100px;
+}
+
+.send-call-back {
+    margin-top: 10px;
+    margin-left: 215px;
+}
+
+.development {
+    margin-left: 100px;
+    margin-right: 400px;
+    height: 200px;
+}
+
+.head-development {
+    border-left: 100px;
+}
+
+.fir-stages-development {
+    margin-top: 15px;
+}
+
+.col-fir-stages:first-child{
+    padding-right: 200px;
+}
+
+.team {
+    margin-left: 100px;
+    height: 150px;
+}
+
+.team-members-team {
+    font-size: 32px;
+    margin-right: 50px;
+}
+
+.projects-team {
+    font-size: 32px;
+    margin-right: 50px;
+}
+
+.how-long-team {
+    font-size: 32px;
+    white-space: pre-line;
+    margin-bottom: 50px;
+}
+
+.books{
+    height: 200px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.email-books{
+    margin-top: 15px;
+    size: 300px;
+    width: 337px;
+}
+
+.send-contacts-book{
+    margin-left: 174px;
+    margin-top: 15px;
+}
+
+.faq{
+    margin-left: 100px;
+}
+
+.faq-col{
+    padding-top: 50px;
+}
+
+.faq-col:hover{
+    padding-top: 70px;
+}
+
+.faq-col::before{
+    content: attr(quest);
+}
+
+.faq-col:hover::before{
+    content: attr(anwser);
+}
+
+.text-floor{
+    text-align: center;
+    font-size: 40px;
+}
+
+.info-floor{
+    margin-left: 100px;
+}
+
+.FAQ{
+    font-size: 50px;
+}
+ .block-info-floor{
+     padding-left: 200px;
+ }
