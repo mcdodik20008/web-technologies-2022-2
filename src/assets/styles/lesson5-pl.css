@@ -1,0 +1,151 @@
+@media screen and (max-width: 1439px) {
+
+    .head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 32px;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+    }
+
+    .head__phones{
+        display: none;
+    }
+
+    .head__refs{
+        display: none;
+    }
+
+    .head__mail{
+        display: flex;
+        padding-right: 32px;
+    }
+
+    .head__burger{
+        padding-left: 32px;
+        display: flex;
+        width: 60px;
+        height: 40px;
+    }
+
+    .mobile__text__about{
+        width: 383px;
+        height: 120px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 144%;
+        letter-spacing: 0.326451px;
+        color: #101828;
+        flex: none;
+        flex-grow: 0;
+    }
+
+    .mobile__contacts{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        width: 382px;
+        height: 356px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.08), 0px 0px 24px rgba(0, 0, 0, 0.16);
+        border-radius: 12px;
+        padding: 0;
+        top: 225px;
+    }
+
+    .mobile__contacts__block{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px;
+        width: 295px;
+        height: 292px;
+        flex: none;
+    }
+
+    .mobile__contacts__head{
+        width: 295px;
+        height: 48px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.38px;
+    }
+
+    .mobile__contacts__callback{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile__contacts__callback_phone{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 32px;
+        gap: 8px;
+        width: 224px;
+        height: 54px;
+    }
+
+    .mobile__contacts__callback_name{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 8px;
+        width: 224px;
+        height: 54px;
+    }
+
+    .mobile__contacts__callback_button{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 11px 24px;
+        gap: 8px;
+        width: 155px;
+        height: 40px;
+        margin-right: 50px;
+        background: #2D66EE;
+        border-radius: 8px;
+        flex: none;
+        flex-grow: 0;
+        margin-right: 70px;
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+        padding: 24px;
+    }
+
+    .footer__text__info{
+        width: 690px;
+        height: 54px;
+        left: 56px;
+        top: 102px;
+    }
+
+    .footer__text__info__item__content{
+        width: 176px;
+        height: 22px;
+        font-family: 'SF Pro Text';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -0.408px;
+        color: #FFFFFF;
+        flex: none;
+        flex-grow: 0;
+    }
+}
