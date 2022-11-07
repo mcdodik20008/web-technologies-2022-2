@@ -1,40 +1,31 @@
 @media screen and (max-width: 767px) {
-
-    .window__size{
+    .window__size {
         width: 425px;
         height: 1267px;
     }
 
-    .head{
+    .head {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 32px;
     }
 
-    .head__phones{
+    .head__phones, .head__refs, .head__mail {
         display: none;
     }
 
-    .head__refs{
-        display: none;
-    }
-
-    .head__mail{
-        display: none;
-    }
-
-    .head__text{
+    .head__text {
         padding: 0;
         align-self: center;
         margin-right: 20vh;
     }
 
-    .mobile{
+    .mobile {
         left: 24px;
     }
 
-    .mobile__contacts{
+    .mobile__contacts {
         position: absolute;
         width: 393px;
         height: 356px;
@@ -42,7 +33,7 @@
         top: 878px;
     }
 
-    .mobile__text{
+    .mobile__text {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -56,11 +47,11 @@
         margin-right: 0px;
     }
 
-    .footer{
+    .footer {
         height: 350px;
     }
 
-    .footer__text__info{
+    .footer__text__info {
         width: 350px;
         height: 300px;
         display: flex;
@@ -68,7 +59,7 @@
         align-content: space-between;
     }
 
-    .footer__text__info__item{
+    .footer__text__info__item {
         margin-left: auto;
         width: 154px;
         height: 54px;

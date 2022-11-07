@@ -1,6 +1,5 @@
 @media screen and (max-width: 1439px) {
-
-    .head{
+    .head {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -10,27 +9,23 @@
         border-radius: 12px;
     }
 
-    .head__phones{
+    .head__phones, .head__refs {
         display: none;
     }
 
-    .head__refs{
-        display: none;
-    }
-
-    .head__mail{
+    .head__mail {
         display: flex;
         padding-right: 32px;
     }
 
-    .head__burger{
+    .head__burger {
         padding-left: 32px;
         display: flex;
         width: 60px;
         height: 40px;
     }
 
-    .mobile__text__about{
+    .mobile__text__about {
         width: 383px;
         height: 120px;
         font-family: 'Inter';
@@ -44,7 +39,7 @@
         flex-grow: 0;
     }
 
-    .mobile__contacts{
+    .mobile__contacts {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -58,7 +53,7 @@
         top: 225px;
     }
 
-    .mobile__contacts__block{
+    .mobile__contacts__block {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -68,7 +63,7 @@
         flex: none;
     }
 
-    .mobile__contacts__head{
+    .mobile__contacts__head {
         width: 295px;
         height: 48px;
         font-family: 'Inter';
@@ -79,12 +74,12 @@
         letter-spacing: 0.38px;
     }
 
-    .mobile__contacts__callback{
+    .mobile__contacts__callback {
         display: flex;
         flex-direction: column;
     }
 
-    .mobile__contacts__callback_phone{
+    .mobile__contacts__callback_phone {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -94,7 +89,7 @@
         height: 54px;
     }
 
-    .mobile__contacts__callback_name{
+    .mobile__contacts__callback_name {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -104,7 +99,7 @@
         height: 54px;
     }
 
-    .mobile__contacts__callback_button{
+    .mobile__contacts__callback_button {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -120,7 +115,7 @@
         margin-right: 70px;
     }
 
-    .footer{
+    .footer {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -128,14 +123,14 @@
         padding: 24px;
     }
 
-    .footer__text__info{
+    .footer__text__info {
         width: 690px;
         height: 54px;
         left: 56px;
         top: 102px;
     }
 
-    .footer__text__info__item__content{
+    .footer__text__info__item__content {
         width: 176px;
         height: 22px;
         font-family: 'SF Pro Text';

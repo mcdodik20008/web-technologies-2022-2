@@ -1,12 +1,3 @@
-*,
-*:before,
-*:after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-
 .head {
     --max-size: 1124px;
     align-self: center;
@@ -23,7 +14,7 @@
     top: 24px;
 }
 
-.its__website{
+.its__website {
     width: 160px;
     height: 24px;
     font-family: 'Inter';
@@ -45,11 +36,11 @@ svg {
     align-self: center;
 }
 
-.head__burger{
+.head__burger {
     display: none;
 }
 
-.head__text{
+.head__text {
     max-width: calc(100vw / 3);
     display: table-cell;
     vertical-align: middle;
@@ -86,10 +77,10 @@ svg {
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
-}
 
-.head__refs__a:first-child {
-    padding-left: 0;
+&:first-child {
+     padding-left: 0;
+ }
 }
 
 .head__refs:first-child {
@@ -103,7 +94,7 @@ svg {
     flex-direction: column;
     align-items: center;
     height: 222px;
-    --max-size: 1124px;
+    --max-size:1124px;
     align-self: center;
     margin-right: max(calc(calc(100vw - var(--max-size)) / 6 * 2), 32px);
     margin-left: max(calc(calc(100vw - var(--max-size)) / 6), 32px);
@@ -118,7 +109,7 @@ svg {
     top: 24px;
 }
 
-.footer__text{
+.footer__text {
     margin-top: 24px;
     width: 217px;
     height: 24px;
@@ -131,7 +122,7 @@ svg {
     color: #FFFFFF;
 }
 
-.footer__text__info{
+.footer__text__info {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -140,7 +131,7 @@ svg {
     height: 54px;
 }
 
-.footer__text__info__item{
+.footer__text__info__item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -150,7 +141,7 @@ svg {
     height: 54px;
 }
 
-.footer__text__info__item__head{
+.footer__text__info__item__head {
     width: 140px;
     height: 24px;
     font-family: 'SF Pro Text';
@@ -162,7 +153,7 @@ svg {
     color: #98A2B3;
 }
 
-.footer__text__info__item__content{
+.footer__text__info__item__content {
     width: 294px;
     height: 22px;
     font-family: 'SF Pro Text';
@@ -174,19 +165,19 @@ svg {
     color: #FFFFFF;
 }
 
-.container{
-    --max-size: 1124px;
+.container {
+    --max-size:1124px;
     margin-top: 24px;
     margin-right: max(calc(calc(100vw - var(--max-size)) / 6 * 2), 32px);
     margin-left: max(calc(calc(100vw - var(--max-size)) / 6), 32px);
 }
 
-.window__size{
+.window__size {
     width: 1440px;
     height: 900px;
 }
 
-.mobile{
+.mobile {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -195,7 +186,7 @@ svg {
     left: 108px;
 }
 
-.mobile__text{
+.mobile__text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -204,7 +195,7 @@ svg {
     position: absolute;
 }
 
-.mobile__text__about{
+.mobile__text__about {
     width: 600px;
     height: 156px;
     font-family: 'Inter';
@@ -216,7 +207,7 @@ svg {
     color: #101828;
 }
 
-.mobile__text__content{
+.mobile__text__content {
     font-family: 'SF Pro Text';
     font-style: normal;
     font-weight: 500;
@@ -226,7 +217,7 @@ svg {
     color: #101828;
 }
 
-.mobile__contacts{
+.mobile__contacts {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -240,7 +231,7 @@ svg {
     border-radius: 12px;
 }
 
-.mobile__contacts__head{
+.mobile__contacts__head {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -250,7 +241,7 @@ svg {
     color: #101828;
 }
 
-.mobile__contacts__callback{
+.mobile__contacts__callback {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -258,7 +249,7 @@ svg {
     gap: 24px;
 }
 
-.mobile__contacts__callback_phone{
+.mobile__contacts__callback_phone {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -266,7 +257,7 @@ svg {
     gap: 8px;
 }
 
-.mobile__contacts__callback__text{
+.mobile__contacts__callback__text {
     font-family: 'SF Pro Text';
     font-style: normal;
     font-weight: 500;
@@ -276,7 +267,7 @@ svg {
     color: #667085;
 }
 
-.mobile__contacts__callback_name{
+.mobile__contacts__callback_name {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -284,7 +275,7 @@ svg {
     gap: 8px;
 }
 
-.mobile__contacts__callback_button{
+.mobile__contacts__callback_button {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -294,7 +285,7 @@ svg {
     border-radius: 8px;
 }
 
-.mobile__contacts__callback_button_text{
+.mobile__contacts__callback_button_text {
     font-family: 'SF Pro Text';
     font-style: normal;
     font-weight: 600;
@@ -304,6 +295,6 @@ svg {
     color: #FFFFFF;
 }
 
-.blue{
+.blue {
     color: #306FF5;
 }
