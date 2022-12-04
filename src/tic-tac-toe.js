@@ -1,4 +1,4 @@
-import {TicTacToe} from "../../Users/Админ/Desktop/web-technologies-2022-2-lesson10/web-technologies-2022-2-lesson10/components/TicTacToe.js";
+import {TicTacToe} from "./components/TicTacToe.js";
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init)
