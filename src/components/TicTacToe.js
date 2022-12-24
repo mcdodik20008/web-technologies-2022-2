@@ -68,6 +68,24 @@ export const TicTacToe = {
                     this.setGameEndStatus()
                 }
 
+                // проверка статуса игры
+                if (this.isGameEnd) {
+                    // вывод информации о победителе
+                    let winner = this.getCurrentTurnValue();
+                    setTimeout(() => {
+                        alert('Победил ' + winner)
+                    })
+                    this.restartGame()
+                    return
+                } else {
+                    // изменить значение текущего хода в объекте
+                    this.changeTurnValue()
+                    // изменить значение текущего хода в дом дереве
+                    if (this.onMove) {
+                        this.onMove(this.isXTurn)
+                    }
+                }
+
                 // проверка на наличие пустых блоков
                 if (!this.checkHasEmptyBlocks()) {
                     // изменение статуса игры
@@ -78,21 +96,6 @@ export const TicTacToe = {
                     })
                     this.restartGame()
                     return
-                }
-
-                // проверка статуса игры
-                if (this.isGameEnd) {
-                    // вывод информации о победителе
-                    setTimeout(() => {
-                        alert('Победил ' + this.getCurrentTurnValue())
-                    })
-                } else {
-                    // изменить значение текущего хода в объекте
-                    this.changeTurnValue()
-                    // изменить значение текущего хода в дом дереве
-                    if (this.onMove) {
-                        this.onMove(this.isXTurn)
-                    }
                 }
             })
         })
@@ -130,6 +133,8 @@ export const TicTacToe = {
             [null, null, null],
             [null, null, null],
         ]
+        this.isXTurn = true
+        this.isGameEnd = false
         document
             .querySelectorAll('[data-row]')
             .forEach(x => x.textContent = "");
@@ -142,7 +147,6 @@ export const TicTacToe = {
      */
     isBlockEmpty(target) {
         const [row, col] = this.getBlockPosition(target)
-
         return !this.matrix[row - 1][col - 1]
     },
 
