@@ -1,11 +1,15 @@
-@import "./global.css";
-@import "./fonts.css";
-@import "./utils.css";
+/*@import "./global.css";*/
 
-.test {
-    color: yellow !important;
+.label-new-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.test {
-    color: red !important;
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
