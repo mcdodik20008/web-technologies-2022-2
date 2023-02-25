@@ -7,9 +7,15 @@
     align-items: flex-start;
 }
 
-.container{
+.pizzas{
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+}
+
+.ghost-image{
+    height: 100px;
+    width: 100px;
+    background-color: brown;
+    padding: 0;
+    margin: 0;
+    border: 0;
 }

@@ -1,173 +1,176 @@
-@import("pizza.js")
+function changePriceCalories(pizza){
+    document.querySelector("#pizzaPrice").innerText = pizza.calculatePrice();
+    document.querySelector("#pizzaCalories").innerText = pizza.calculateCalories();
+}
 
-class Block {
-    constructor(id, className, tagName) {
+class Pizza {
+    constructor(name, price, calories, size = false,  toppings = []) {
+        this.name = name;
+        this.price = price;
+        this.calories = calories;
+        this.size = size;
+        this.toppings = toppings;
+    }
+
+    addTopping(topping) {
+        this.toppings.push(topping);
+    }
+
+    removeTopping(topping) {
+        this.toppings = this.toppings.filter(item => item !== topping);
+    }
+
+    getToppings() {
+        return this.topping;
+    }
+
+    getSize() {
+        return this.size ? "Большая" : "Маленькая";
+    }
+
+    getStuffing() {
+        return this.name;
+    }
+
+    calculatePrice() {
+        let price = 0;
+        for (const i in this.toppings) {
+            price += this.toppings[i].getPrice(this.size)
+        }
+        return price + this.getSizePrice() + this.price;
+    }
+
+    calculateCalories() {
+        let calories = 0;
+        console.log(this.toppings)
+        for (const i in this.toppings) {
+            calories += this.toppings[i].getCalories(this.size)
+        }
+        return calories + this.getSizeCalories() + this.calories
+    }
+
+    getSizePrice() {
+        return this.size ? 200 : 100;
+    }
+
+    getSizeCalories() {
+        return this.size ? 200 : 100;
+    }
+
+    render() {
+        let block = document.createElement("div")
+        let image = document.createElement("div")
+        image.className = "ghost-image";
+        block.appendChild(image);
+        return block
+    }
+}
+
+class Topping {
+    constructor(id, name, small, big) {
+        this.id = id;
+        this.name = name;
+        this.small = small;
+        this.big = big;
+    }
+
+    render(parent) {
+        let block = document.createElement("input")
+        let label = document.createElement("label")
+        block.type = "checkbox"
+        block.id = this.id
+        label.textContent = this.name
+        label.setAttribute("for", this.id)
+        parent.appendChild(block)
+        parent.appendChild(label)
+    }
+
+    getPrice(isBig){
+        return isBig ? this.big[0] : this.small[0]
+    }
+
+    getCalories(isBig){
+        return isBig ? this.big[1] : this.small[1]
+    }
+}
+
+class PizzaBlock{
+    render(item, radio) {
+        let name = document.createElement("label")
+        radio.name = "pizza";
+        radio.type = "radio";
+        name.textContent = item.name;
+        let block = item.render();
+        block.appendChild(radio);
+        block.appendChild(name)
+        return block
+    }
+}
+
+class PizzaList {
+    constructor(id, className, tagName, pizzas) {
         this.id = id
         this.className = className
         this._tagName = tagName;
-
-        this._element = null
+        this.pizzas = pizzas;
+        this.selectedPizza = pizzas[0];
+        this._element = null;
     }
 
     render() {
         this._element = document.createElement(this._tagName)
-
         if (this.id) {
             this._element.id = this.id
         }
-
         if (this.className) {
             this._element.className = this.className
         }
 
-        return this._element
-    }
-}
-
-class Menu extends Block {
-    constructor(id, className, items) {
-        super(id, className, 'ul');
-
-        this.items = items
-    }
-
-    render() {
-        super.render();
-        this.items.forEach((item) => {
-            this._element.appendChild(item.render())
+        this.pizzas.forEach((item) => {
+            let radio = document.createElement("input")
+            let block = new PizzaBlock().render(item, radio);
+            radio.addEventListener("click", (e) => {
+                this.selectedPizza = pizzas.find(x => x.name === block.childNodes.item(2).textContent)
+                this.selectedPizza.size = false;
+                this.selectedPizza.toppings = [];
+                document.querySelector("form").reset()
+                changePriceCalories(this.selectedPizza)
+            })
+            this._element.appendChild(block)
         })
         return this._element
     }
 }
 
-class MenuItem extends Block {
-    constructor(id, name, price, calories, changers) {
-        super(id, "div-block", "div");
-        this.name = name;
-        this.price = price;
-        this.calories = calories;
-        this.changers = changers;
-        this.slash = new SpanBlock(null, "/")
-        this.colon = new SpanBlock(null, ": ")
-    }
+peper = new Pizza("Пеперони", 500, 800)
+mar = new Pizza("Маргарита", 300, 900)
+bav = new Pizza("Баварская", 700, 1000)
 
-    render() {
-        super.render()
-        this._element.appendChild(this.name.render())
-        this._element.appendChild(this.colon.render())
-        this._element.appendChild(this.price.render())
-        this._element.appendChild(this.slash.render())
-        this._element.appendChild(this.calories.render())
-        this.changers.forEach((changer) => {
-            this._element.appendChild(changer.render())
-        })
-        return this._element
-    }
-}
+pizzas = [peper, mar, bav];
+pizaList = new PizzaList(null, "pizzas", "div", pizzas)
 
-class SpanBlock extends Block {
-    constructor(id, name) {
-        super(id, null, 'span');
+document.querySelector("#pizzaSize").addEventListener("change", x => {
+    pizaList.selectedPizza.size = x.target.value === "large"
+    changePriceCalories(pizaList.selectedPizza);
+})
 
-        this.name = name
-    }
+document.body.insertBefore(pizaList.render(), document.body.childNodes[0])
+let topList = [
+    new Topping("chees", "Сырный бортик", [50, 0], [100, 50]),
+    new Topping("macar", "Сливочная моцарелла", [150, 50], [300, 50]),
+    new Topping("chedder", "Чеддер и пармезан", [150, 50], [300, 50])
+]
+topList.forEach(x => x.render(document.body.querySelector("#nachinka")))
 
-    render() {
-        super.render();
-        this._element.textContent = this.name;
-        return this._element;
-    }
-}
-
-class Changer extends Block {
-    constructor(id, name, data) {
-        super(id, "label-new-line", "Label");
-        this.name = name;
-        this.checBox = document.createElement('input')
-        this.checBox.type = "checkbox"
-        this.data = data
-        this.basicPrice = 0
-        this.basicCalories = 0
-    }
-
-    render() {
-        super.render();
-        this._element.appendChild(this.checBox)
-        this._element.appendChild(new SpanBlock(null, this.name).render())
-        return this._element
-    }
-}
-class SizeChanger extends Changer{
-    constructor(id, name, data) {
-        super(id, name, data);
-        this.addCheckEventListener()
-    }
-
-    addCheckEventListener(){
-        let flag = true;
-        this.checBox.addEventListener('click', e => {
-            let price = document.getElementById(this.data.priceId)
-            let calories = document.getElementById(this.data.caloriesId)
-            if(flag){
-                console.log("Увеличил")
-                price.textContent = parseInt(price.textContent) + parseInt(this.data.bPrice) - parseInt(this.data.sPrice) + "";
-                calories.textContent =  parseInt(calories.textContent) + parseInt(this.data.bCalories) - parseInt(this.data.sCalories) + "";
-            } else {
-                price.textContent = parseInt(price.textContent) + parseInt(this.data.sPrice) - parseInt(this.data.bPrice) + "";
-                calories.textContent =  parseInt(calories.textContent) + parseInt(this.data.sCalories) - parseInt(this.data.bCalories) + "";
-            }
-            flag = !flag
-        });
-    }
-}
-
-class DopChanger extends Changer {
-    constructor(id, name, data) {
-        super(id, name, data);
-        this.addCheckEventListener()
-    }
-
-    addCheckEventListener(){
-        let flag = true;
-        this.checBox.addEventListener('click', e => {
-            let peperBig = document.getElementById("peperBig").firstChild.value
-            let price = document.getElementById(this.data.priceId)
-            let calories = document.getElementById(this.data.caloriesId)
-            if(flag){
-                console.log(peperBig)
-                price.textContent = parseInt(price.textContent)
-                calories.textContent =  parseInt(calories.textContent) + parseInt(this.data.bCalories) - parseInt(this.data.sCalories) + "";
-            } else {
-                console.log(peperBig)
-                price.textContent = parseInt(price.textContent) + parseInt(this.data.sPrice) - parseInt(this.data.bPrice) + "";
-                calories.textContent =  parseInt(calories.textContent) + parseInt(this.data.sCalories) - parseInt(this.data.bCalories) + "";
-            }
-            flag = !flag
-        });
-    }
-}
-
-class Data {
-    constructor(priceId, caloriesId, sPrice, sCalories, bPrice, bCalories) {
-        this.priceId = priceId
-        this.caloriesId = caloriesId
-        this.sCalories = sCalories;
-        this.bPrice = bPrice;
-        this.bCalories = bCalories;
-        this.sPrice = sPrice;
-    }
-}
-cheeseData = new Data("pricePeper", "caloriesPeper", "50", "0", "100", "0");
-
-namePeper = new SpanBlock(null, "Пеперони");
-pricePeper = new SpanBlock("pricePeper", "900");
-caloriesPeper = new SpanBlock("caloriesPeper", "500");
-peperData = new Data("pricePeper", "caloriesPeper", "100", "100", "200", "200");
-peperBig = new SizeChanger("peperBig", "Большая или маленькая пицца", peperData)
-peperCheese = new DopChanger(null, "Дополнительная Моцарелла", cheeseData)
-
-peperItem = new MenuItem("peperItem", namePeper, pricePeper, caloriesPeper, [peperBig, peperCheese]);
-
-menu = new Menu("menu", "class-menu", [peperItem])
-
-document.body.appendChild(peperItem.render())
+document.body.querySelectorAll("input[type= checkbox]").forEach(x =>{
+    x.addEventListener("change",y => {
+        if (y.target.checked){
+            pizaList.selectedPizza.addTopping(topList.find(x => x.id ===y.target.id))
+        } else {
+            pizaList.selectedPizza.removeTopping(topList.find(x => x.id ===y.target.id))
+        }
+        changePriceCalories(pizaList.selectedPizza)
+    })
+})
+document.querySelector("input[type= radio]").setAttribute("checked", "")
+changePriceCalories(pizaList.selectedPizza)

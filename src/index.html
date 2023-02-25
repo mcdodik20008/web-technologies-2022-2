@@ -9,21 +9,25 @@
     <link rel="stylesheet" href="/src/assets/styles/style.css">
 </head>
 <body>
+<form>
+    <div>
+        <label>Размер пиццы:</label>
+        <select id="pizzaSize">
+            <option value="small">Маленькая</option>
+            <option value="large">Большая</option>
+        </select>
+    </div>
+    <div class="label-new-line" id="nachinka">
+        <label>Начинка:</label>
 
-<ul>
-    <span>Пицца:</span>
-    <span id="price">Цена</span>
-    <span>/</span>
-    <span id="calories">Цена</span>
-    <label class="label-new-line">
-        <input type="checkbox">
-        <span>Большая или маленькая пицца</span>
-    </label>
-    <label class="label-new-line">
-        <input type="checkbox">
-        <span>Дополнительные Ингридиенты</span>
-    </label>
-</ul>
+    </div>
+    <div>
+        <label>Цена: <span id="pizzaPrice"></span> руб.</label>
+    </div>
+    <div>
+        <label>Калории: <span id="pizzaCalories"></span> ккал.</label>
+    </div>
+</form>
 <script src="index.js"></script>
 </body>
 </html>
