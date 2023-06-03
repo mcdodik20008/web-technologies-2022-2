@@ -26,6 +26,10 @@ if ($_FILES && $_FILES["filename"]["error"] == UPLOAD_ERR_OK) {
             $image = new ImageResize($filePath);
             $image->resizeToWidth(300);
             $image->save(PHOTOS_DIR . "/small" . $file['name']);
+
+            $image = new ImageResize($filePath);
+            $image->resizeToWidth(600);
+            $image->save($filePath);
         } catch (\Gumlet\ImageResizeException $e) {
             echo $e;
         }
