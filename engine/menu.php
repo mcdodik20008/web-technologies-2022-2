@@ -16,6 +16,6 @@ function getMenu() {
         [
             'title' => 'Задание 3',
             'link' => '/3/?page=zadanie'
-        ]
+        ],
     ];
 }

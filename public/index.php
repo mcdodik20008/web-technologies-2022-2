@@ -1,15 +1,27 @@
 <?php
 include '../config/config.php';
 
-$page = 'index';
-if (isset($_GET['page'])) {
-    $page = $_GET['page'];
+//$page = 'index';
+//if (isset($_GET['page'])) {
+//    $page = $_GET['page'];
+//}
+
+$url_array = explode('/', $_SERVER['REQUEST_URI']);
+if ($url_array[2] == "") {
+    $page = 'index';
+} else {
+    $page = $url_array[2];
 }
 $params = [];
 
 switch ($page) {
     case 'index':
         $params['title'] = 'Главная';
+        break;
+
+    case 'mymenu':
+        $params['title'] = 'Лаба 20';
+        $params['mymenu'] = getAllMyMenu();
         break;
 
     case 'catalog':
@@ -24,12 +36,23 @@ switch ($page) {
 
     case 'gallery':
         $params['title'] = 'Галерея';
-        $params['photos'] = getPhotos(PHOTOS_DIR);
         break;
 
     case 'apicatalog':
         echo json_encode(getCatalog(), JSON_UNESCAPED_UNICODE);
         die();
+
+    case 'news':
+        $params['title'] = 'Новости';
+        $params['news'] = getNews();
+        break;
+
+    case 'onenews':
+        $id = (int)$_GET['id'];
+        $news = getOneNews($id);
+        $params['title'] = 'Новости магазина  ' . $news['title'];
+        $params['news'] = $news;
+        break;
 
     default:
         echo "404";
@@ -37,3 +60,21 @@ switch ($page) {
 }
 
 echo render($page, $params);
+
+
+
+//$page = 'index';
+//
+//$params = [
+//    'test' => 'test',
+//    'title' => 'Главная',
+//    'phone' => '+7 495 12-23-12'
+//];
+
+//echo renderTemplate('index', $params);
+
+//echo renderTemplate(LAYOUTS_DIR . 'main', [
+//    'title' => $params['title'],
+//    'menu' => renderTemplate('menu'),
+//    'content' => renderTemplate($page, $params)
+//]);

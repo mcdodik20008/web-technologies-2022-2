@@ -1,5 +1,7 @@
 <a href="/public/">Главная</a>
-<a href="/public/?page=catalog">Каталог</a>
-<a href="/public/?page=about">О нас</a><br>
-<a href="/public/?page=gallery">Галерея</a><br>
+<a href="/public/catalog">Каталог</a>
+<a href="/public/about">О нас</a>
+<a href="/public/news">Новости</a><br>
+<a href="/public/mymenu">Новости</a><br>
+
 
