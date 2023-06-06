@@ -20,7 +20,7 @@ switch ($page) {
         break;
 
     case 'mymenu':
-        $params['title'] = 'Лаба 20';
+        $params['title'] = 'Моё меню';
         $params['mymenu'] = getAllMyMenu();
         break;
 

@@ -25,16 +25,6 @@ body {
     display: none;
 }
 
-.control-icon {
-    width: 1em;
-    height: 1em;
-    opacity: 0.2;
-    transition: 0.2s;
-}
-.control-icon:hover {
-    opacity: 1;
-}
-
 .list-item__arrow {
     width: 1em;
     height: 1em;
