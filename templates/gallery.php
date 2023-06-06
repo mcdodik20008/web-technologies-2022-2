@@ -1,5 +1,5 @@
 <h2><?php
-
+    echo uniqid();
     echo $title; ?></h2>
 
 <?php
@@ -19,13 +19,14 @@ if ($_FILES && $_FILES["filename"]["error"] == UPLOAD_ERR_OK) {
         echo "Ошибка. Файл не является картинкой";
         return;
     }
-
-    $filePath = PHOTOS_DIR . '/' . $name;
+    // если нам понадобиться оригинальное имя, то можно написать метод getName(storedName),
+    // который возвращает, в зависимости от "small" префикса
+    $filePath = PHOTOS_DIR . '/stored-file-' . $name;
     if (move_uploaded_file($file["tmp_name"], $filePath)) {
         try {
             $image = new ImageResize($filePath);
             $image->resizeToWidth(300);
-            $image->save(PHOTOS_DIR . "/small" . $file['name']);
+            $image->save(PHOTOS_DIR . "/small-stored-file-" . $file['name']);
 
             $image = new ImageResize($filePath);
             $image->resizeToWidth(600);
