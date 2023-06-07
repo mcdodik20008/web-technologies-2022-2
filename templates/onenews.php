@@ -1,5 +1,4 @@
-
 <div>
-    <b><?=$news['title']?></b><br>
-    <b><?=$news['text']?></b>
+    <b><?=$news['title']?></b>
+    <p><?=$news['text']?></p>
 </div>

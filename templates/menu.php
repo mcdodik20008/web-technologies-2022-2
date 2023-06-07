@@ -1,7 +1,6 @@
-<a href="/public/">Главная</a>
+<a href="/public">Главная</a>
 <a href="/public/catalog">Каталог</a>
 <a href="/public/about">О нас</a>
-<a href="/public/news">Новости</a><br>
-<a href="/public/mymenu">Новости</a><br>
-
-
+<a href="/public/news">Новости</a>
+<a href="/public/feedback">Отзывы</a><br>
+<a href="/public/catalog-page">Хранимый в базе каталог</a><br>

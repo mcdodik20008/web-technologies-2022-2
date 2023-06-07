@@ -1,16 +1,19 @@
 <?php
 const TEMPLATES_DIR = '../templates/';
 const LAYOUTS_DIR = 'layouts/';
+const PHOTO = '/public/photo/';
 
 /* DB config */
-const HOST = '127.0.0.1';
+const HOST = 'localhost';
 const USER = 'root';
 const PASS = '';
-const DB = 'webis';
+const DB = 'catalog';
 
 include "../engine/db.php";
-include "../engine/function.php";
-include "../engine/catalog.php";
-include "../engine/menu.php";
-include "../engine/news.php";
-include "../engine/mymenu.php";
+include "../engine/controller.php";
+include "../engine/render.php";
+include "../models/catalog.php";
+include "../models/menu.php";
+include "../models/news.php";
+include "../models/feedback.php";
+include "../models/catalog-my.php";
